@@ -6,6 +6,8 @@ static const Block blocks[] = {
 	{"Mem: ", "free -h | awk '/^Mem/ { print $3\" / \"$2 }' | sed s/i//g",	30,		0},
 
 	{"", "date '+%a, %b %d %I:%M %p'",					60,		0},
+
+	{"Battery: ", "upower -i /org/freedesktop/UPower/devices/battery_BAT0 |  awk '/percentage/ {print $2}'", 60, 0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
